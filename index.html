@@ -224,49 +224,49 @@
     </ul>
   </section>
 
-  <script>
-    // Google Maps Init
-    let map, marker;
-    function initMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 28.6139, lng: 77.2090 }, // Default: New Delhi
-        zoom: 12,
-      });
-      marker = new google.maps.Marker({
-        position: map.getCenter(),
-        map: map,
-        draggable: true,
-      });
+ <script>
+  let map, marker;
 
-      google.maps.event.addListener(marker, 'dragend', function(evt){
-        document.getElementById("latitude").value = evt.latLng.lat();
-        document.getElementById("longitude").value = evt.latLng.lng();
-      });
-    }
+  function initMap() {
+    // Default center (New Delhi, India)
+    const myLatlng = { lat: 28.6139, lng: 77.2090 };
 
-    // Form Submit
-    document.getElementById("issueForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const formData = new FormData();
-      formData.append("image", document.getElementById("image").files[0]);
-      formData.append("description", document.getElementById("description").value);
-      formData.append("latitude", document.getElementById("latitude").value);
-      formData.append("longitude", document.getElementById("longitude").value);
-
-      try {
-        const response = await fetch("https://your-n8n-webhook-url", {
-          method: "POST",
-          body: formData
-        });
-        const result = await response.json();
-        document.getElementById("apiResponse").innerText = JSON.stringify(result, null, 2);
-      } catch (error) {
-        document.getElementById("apiResponse").innerText = "Error: " + error.message;
-      }
+    map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: myLatlng,
     });
-  </script>
+
+    // Add draggable marker
+    marker = new google.maps.Marker({
+      position: myLatlng,
+      map,
+      draggable: true,
+      title: "Drag to issue location",
+    });
+
+    // Update hidden inputs on marker drag
+    google.maps.event.addListener(marker, "dragend", function (evt) {
+      document.getElementById("latitude").value = evt.latLng.lat();
+      document.getElementById("longitude").value = evt.latLng.lng();
+    });
+
+    // Also update when user clicks anywhere on the map
+    map.addListener("click", (event) => {
+      marker.setPosition(event.latLng);
+      document.getElementById("latitude").value = event.latLng.lat();
+      document.getElementById("longitude").value = event.latLng.lng();
+    });
+
+    // Initialize with default coords
+    document.getElementById("latitude").value = myLatlng.lat;
+    document.getElementById("longitude").value = myLatlng.lng;
+  }
+
+  window.initMap = initMap;
+</script>
 
   <!-- Google Maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
 </body>
 </html>
+
