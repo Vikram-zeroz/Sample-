@@ -1,297 +1,272 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yogesh Deshmukh, Dr. Yogesh Deshmukh, Yogesh Deshmukh Sanjivani College, Yogesh Deshmukh IT Department, TOC Study Material, TOC Notes, Web Technology Notes, OOP using Java Notes, Yogesh Deshmukh Study Material, Theory of Computation Study Material, TOC Video Lectures">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civic Reporter - Report Issues Instantly</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
 
-    <meta name="keywords" content="Yogesh Deshmukh, Dr. Yogesh Deshmukh, Yogesh Deshmukh Sanjivani College, Yogesh Deshmukh IT Department, TOC Study Material, TOC Notes, Web Technology Notes, OOP using Java Notes, Yogesh Deshmukh Study Material, Theory of Computation Study Material, TOC Video Lectures">
-    <meta name="google-site-verification" content="DV9_ceItE_vUo9lQAh8DB8ajDuHZc8T_7Xxn9uPqopY">
-    <title>Dr. Yogesh Sureshrao Deshmukh</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="download.jpg" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  
+    /* Header */
+    header {
+      background: #004d99;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 30px;
+    }
+    header img {
+      height: 40px;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("city-bg.jpg") center/cover no-repeat;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+      background-color: #003366;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .hero button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      border: none;
+      background: #00b894;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .hero button:hover {
+      background: #009970;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    }
+
+    form label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+    }
+    form input, form textarea {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    form button {
+      margin-top: 20px;
+      background: #004d99;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #003366;
+    }
+
+    /* Map Styling */
+    #map {
+      height: 300px;
+      width: 100%;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+
+    /* Info Sections */
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      color: #004d99;
+    }
+    .tips {
+      display: flex;
+      gap: 20px;
+    }
+    .tip-box {
+      flex: 1;
+      background: #eef5ff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #cce0ff;
+    }
+    .tip-box ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+  </style>
 </head>
+<body>
 
-<body data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
-    <header>
-        <div class="user">
-            <img src="YSD Photo.jpg" alt="">
-            <h1 class="name">Dr. Yogesh Deshmukh</h1>
-            <p class="post">Assistant Professor</p>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">My Notes</a></li>
-                <li><a href="#contacts">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id="menu" class="fas fa-bars"></div>
-    <!-- header section ends -->
+  <!-- Header -->
+  <header>
+    <div style="display:flex;align-items:center;">
+      <img src="Logo2.webp" alt="Logo">
+      <h1 style="margin-left:10px;font-size:22px;">Civic Reporter</h1>
+    </div>
+    <nav>
+      <a href="#report">Report Issue</a>
+      <a href="#about">About</a>
+      <a href="#help">Help</a>
+      <a href="#support">Contact</a>
+    </nav>
+  </header>
 
-    <!-- home section starts -->
-    <section class="home" id="home">
-        <h3>HI MYSELF!</h3>
-        <h2>DR. YOGESH DESHMUKH</h2>
-        <h3 class="post">i am <span class="typing-text">a teacher</span><span class="typed-cursor typed-cursor--blink">|</span></h3>
-        <p>Assistant Professor, Department of Information Technology, Sanjivani College of
-            Engineering, Kopargaon.</p>
-        <a class="know" href="#about"><button class="btn" fdprocessedid="s4jtw">Know Me<i class="fas fa-user"></i></button></a>
-        
-        <div class="share">
-            <!-- <a href="#" class="fab fa-facebook-f"></a> -->
-            <a href="https://www.facebook.com/yogesh.deshmukh.94651" target="_blank" class="fab fa-facebook"></a>
-            <a href="https://www.youtube.com/channel/UCnEutuBQ9jroYPXs0mzf1zg" target="_blank" class="fab fa-youtube"></a>
-            <a href="https://www.linkedin.com/feed/?trk=sem-ga_campid.14650114788_asid.151761418307_crid.657403558721_kw.linkedin%20login_d.c_tid.kwd-12704335873_n.g_mt.e_geo.1007786" target="_blank" class="fab fa-linkedin"></a>
-            <a href="#" target="_blank" class="fab fa-github"></a>
-            <a href="https://drive.google.com/drive/u/0/folders/1eBS5CY2JHoGE1WR6n-T_Pk9-OzD68VZ4" target="_blank" class="fas fa-download"></a>
-	     <a href="https://wa.me/+919975616885" target="_blank" class="fab fa-whatsapp"></a>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Report Civic Issues Instantly</h1>
+    <p>Help improve your community by reporting infrastructure problems, maintenance issues, and public service concerns directly to municipal authorities.</p>
+    <button onclick="document.getElementById('report').scrollIntoView({behavior:'smooth'})">Report an Issue</button>
+  </div>
 
-        </div>
-    </section>
-    <!-- home section end -->
+  <!-- Report Form -->
+  <div class="container" id="report">
+    <h2>Submit a New Issue</h2>
+    <form id="issueForm">
+      <label for="image">Upload Issue Image:</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
 
-    <!-- about section start -->
-    <section class="about" id="about">
-        <h1 class="heading">About Me</h1>
-        <div class="row">
-            <div class="info">
-                <h3 data-aos="slide-right" class="aos-init aos-animate"><span>Name:</span>Dr. Yogesh Sureshrao Deshmukh</h3>
-                <h3 data-aos="slide-left" class="aos-init aos-animate"><span>Qualification:</span>PhD CSE (2022), M.Tech CSE (2013), B.E. IT (2008)</h3>
-                <h3 data-aos="slide-right" class="aos-init aos-animate"><span>Teaching Experience:</span>16 Years</h3>
-                <h3 data-aos="slide-left" class="aos-init aos-animate"><span>Current Organization:</span>Sanjivani College of Engineering, Kopargaon</h3>
-                <h3 data-aos="slide-right" class="aos-init aos-animate"><span>Current Designation:</span>Assistant Professor</h3>
-				<h3 data-aos="slide-right" class="aos-init aos-animate"><span>Programming Skills:</span>C,C++,Core Java, Advanced Java ,PHP, HTML, CSS, Java Script</h3>
-				<h3 data-aos="slide-right" class="aos-init aos-animate"><span>Research Area:</span>Machine Learning and Artificial Intelligence</h3>
-                <a data-aos="flip-right" href="https://drive.google.com/file/d/1TPLebpzqgtt9q7guYKEMIlvl74tmsez1/view?usp=sharing" target="_blank" class="aos-init aos-animate"><button class="btn" fdprocessedid="m6d99f">My Resume <i class="fas fa-download"></i></button></a>
-            </div>
-            <div class="counter">
-                <div class="box aos-init aos-animate" data-aos="slide-right" data-aos-duration="1000">
-                    <span>8</span>
-                    <h3>NPTEL Certifications</h3>
-                </div>
-                <div class="box aos-init aos-animate" data-aos="zoom-in">
-                    <span>15+</span>
-                    <h3>Product Development</h3>
-                </div>
-                <!-- <div class="box" data-aos="slide-left">
-                    <span>4 star</span>
-                    <h3>on Hackerrank</h3>
-                </div>
-                <div class="box" data-aos="slide-right">
-                    <span>2 star</span>
-                    <h3>on Leetcode</h3>
-                </div> -->
-                <div class="box aos-init aos-animate" data-aos="slide-left">
-                    <span>19</span>
-                    <h3>Scopus Publications</h3>
-                </div>
-				<div class="box aos-init aos-animate" data-aos="slide-left">
-                    <span>11</span>
-                    <h3>Guest Lecture Delivered</h3>
-                </div>
-				 <div class="box aos-init aos-animate" data-aos="slide-left">
-                    <span>17</span>
-                    <h3>STTP and Workshop Attended</h3>
-                </div>
-				<div class="box aos-init aos-animate" data-aos="slide-left">
-                    <span>9</span>
-                    <h3>Workshop Conducted</h3>
-                </div>
-            </div>
+      <label for="description">Issue Description:</label>
+      <textarea id="description" name="description" rows="4" placeholder="Describe the issue..." required></textarea>
 
-        </div>
-    </section>
-    <!-- about section end -->
+      <label for="map">Mark Issue Location:</label>
+      <div id="map"></div>
+      <input type="hidden" id="latitude" name="latitude">
+      <input type="hidden" id="longitude" name="longitude">
 
-    <!-- education section starts -->
-    <section class="education" id="education">
-        <h1 class="heading">My Education</h1>
-        <div class="box-container">
-            <div class="box aos-init aos-animate" data-aos="slide-right">
-                <i class="fas fa-graduation-cap"></i>
-                <span>2004</span>
-                <h3>Passed 12th</h3>
-                <h4>Marks Obtained: 75%</h4>
-                <h4>Year of Passing:2004</h4>
-                <h4>School: Dynanamata Junior College, Sangamner</h4>
-            </div>
-            <div class="box aos-init aos-animate" data-aos="slide-left">
-                <i class="fas fa-graduation-cap"></i>
-                <span>2004-2008</span>
-                <h3>Degree: BEIT</h3>
-                <h4>Marks Obtained:71%</h4>
-                <h4>Year of Passing:2008</h4>
-                <h4>Pravara Rural Engineering College, Loni, MH</h4>
-            </div>
-            <div class="box aos-init aos-animate" data-aos="slide-right">
-                <i class="fas fa-graduation-cap"></i>
-                <span>2010-2013</span>
-                <h3>Degree: M.Tech</h3>
-                <h4>Marks Obtained:78%</h4>
-                <h4>Year of Passing:2013</h4>
-                <h4>RGPV, Bhopal</h4>
-            </div>
-            <div class="box aos-init aos-animate" data-aos="slide-left">
-                <i class="fas fa-graduation-cap"></i>
-                <span>2018-2022</span>
-                <h3>Degree: PhD (CSE)</h3>
-                <h4>Thesis Title:Mammogram Classification using Machine Learning Algorithm and Swarm Intelligence</h4>
-                <h4>Year of Passing:2022</h4>
-                <h4>MPU, Bhopal</h4>
-            </div>
-        </div>
-    </section>
-    <!-- education section ends -->
-    <!-- skills section strats -->
-    <section class="skills" id="skills">
-        <h1 class="heading">My Skills</h1>
-        <div class="row">
-            <div class="progress">
-                <h3> HTML &amp; CSS <span>100%</span> </h3>
-                <div class="bar html"><span class="reveal"></span></div>
-                <h3> C/C++ <span>90%</span> </h3>
-                <div class="bar cpp"><span class="reveal"></span></div>
-                <h3> Python <span>80%</span> </h3>
-                <div class="bar python"><span class="reveal"></span></div>
-                <h3> SQL <span>100%</span> </h3>
-                <div class="bar sqli"><span class="reveal"></span></div>
-                <h3> PHP <span>100%</span> </h3>
-                <div class="bar php"><span class="reveal"></span></div>
-            </div>
-            <div class="progress">
-                <h3> Data Structure <span>100%</span> </h3>
-                <div class="bar dsa"><span class="reveal"></span></div>
-                <h3> javascript <span>90%</span> </h3>
-                <div class="bar js"><span class="reveal"></span></div>
-                <h3> Core Java <span>100%</span> </h3>
-                <div class="bar cjava"><span class="reveal"></span></div>
-				 <h3> Advance Java <span>90%</span> </h3>
-                <div class="bar ajava"><span class="reveal"></span></div>
-				 <h3> Angular <span>80%</span> </h3>
-                <div class="bar angular"><span class="reveal"></span></div>
-            </div>
-        </div>
-    </section>
-    <!-- skills section ends -->
-    <!-- project section starts -->
-    <section class="projects" id="projects">
-        <h1 class="heading">Study Material</h1>
-        <div class="box-container aos-init aos-animate" data-aos="zoom-in-down">
-            <a class="box" href="https://www.youtube.com/watch?v=7Jqs-3ClypU&amp;list=PL7VMmwgYignrwxvdEE0cC2esnTLVQbODV" target="_blank">
-                <h4>Theory of Computation</h4>
-                
-            </a>
-            <a class="box" href="https://drive.google.com/drive/u/0/folders/19fYfSUPSunWzuSINBJ0LAMIGWM4VPmTk" target="_blank">
-                <h4>Object Oriented Programming with Java</h4>
-                
-            </a>
-            <a class="box" href="https://drive.google.com/drive/u/0/folders/1eBS5CY2JHoGE1WR6n-T_Pk9-OzD68VZ4" target="_blank">
-                <h4>Web Technology</h4>
-               
-            </a>
-            <a class="box" href="https://drive.google.com/drive/u/0/folders/1mz2SwFQiol1Isq9jE2QORGh1FzPjRmJM" target="_blank">
-                <h4>Artificial Intelligence</h4>
-               
-            </a>
-            <a class="box" href="https://www.youtube.com/watch?v=Bj8dFHjxY4k" target="_blank">
-                <h4>Data Structures and Files</h4>
-               
-            </a>
-            <a class="box" href="https://www.youtube.com/watch?v=hfHWMnAY6qE" target="_blank">
-                <h4>Design and Analysis of Algorithm</h4>
-                
-            </a>
-        </div>
-    </section>
-    <!-- my project section ends -->
-    <!-- contacts section starts -->
-    <section class="contacts" id="contacts">
-        <h1 class="heading">Contact Me</h1>
-        <div class="row">
+      <button type="submit">Submit Issue</button>
+    </form>
+    <pre id="apiResponse"></pre>
+  </div>
 
-            <div class="content aos-init aos-animate" data-aos="slide-right">
+  <!-- Tips Section -->
+  <section>
+    <h2>Tips for Better Reports</h2>
+    <div class="tips">
+      <div class="tip-box">
+        <h3>📸 Photo Guidelines</h3>
+        <ul>
+          <li>Take photos in good lighting conditions</li>
+          <li>Show the issue from multiple angles</li>
+          <li>Include nearby landmarks for context</li>
+          <li>Ensure images are clear and in focus</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <h3>📝 Description Tips</h3>
+        <ul>
+          <li>Be specific about the location</li>
+          <li>Describe the severity of the issue</li>
+          <li>Mention any safety concerns</li>
+          <li>Include relevant timing information</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                <h3 class="title">contact info</h3>
+  <!-- About -->
+  <section id="about">
+    <h2>About</h2>
+    <p>This platform helps citizens report civic issues like road damage, garbage collection, water supply problems, and streetlight issues. Reports are sent directly to the municipal department for quick action.</p>
+  </section>
 
-                <div class="info">
-                    <h3> <i class="fas fa-envelope"></i> yogeshdeshmukhit@sanjivani.org.in, yogesh.d151@gmail.com</h3>
-                    <h3><i class="fas fa-phone"></i>+917020572674, +919975616885</h3>
-                    <h3><i class="fas fa-map-marker-alt"></i> Rachana Park, Sai City, Kopargaon-423601 </h3>
-                </div>
-            </div>
+  <!-- Help -->
+  <section id="help">
+    <h2>Help</h2>
+    <ul>
+      <li><b>Step 1:</b> Upload a clear image of the issue.</li>
+      <li><b>Step 2:</b> Add description and location on the map.</li>
+      <li><b>Step 3:</b> Submit the report.</li>
+      <li>The municipal department will receive your report instantly.</li>
+    </ul>
+  </section>
 
-            <form method="">
-                <input type="text" placeholder="name" id="sendername" class="box" fdprocessedid="f6mhzq">
-                <input type="email" placeholder="email" id="reply_to" class="box" fdprocessedid="aq4zj">
-                <input type="phone" placeholder="Phone" id="phone" class="box" fdprocessedid="7wsow">
-                <input type="text" placeholder="subject" id="subject" class="box" fdprocessedid="ama8b">
-                <textarea id="message" cols="30" rows="8" class="box message" placeholder="message"></textarea>
-                <button type="submit" class="btn" onclick="sendMail();" fdprocessedid="73sfv"> send <i class="fas fa-paper-plane"></i></button>
-            </form>
-            <script>
-                function sendMail() {
-                        (function () {
-                            emailjs.init("ZMftIU4zwjSjXXAff"); // Account Public Key 
-                        })();
-                        var params = {
-                            sendername: document.querySelector("#sendername").value, 
-                            //to: document.querySelector("#to").value,
-                            phone: document.querySelector("#phone").value,
-                            subject: document.querySelector("#subject").value,
-                            replyto: document.querySelector("#reply_to").value,
-                            message: document.querySelector("#message").value,};
-                            var serviceID = "service_n2qdpdd"; // Email Service ID
-                            var templateID = "template_mos01mx"; // Email Template ID
-                            
-                            emailjs.send(serviceID, templateID, params)
-                                .then(res =>{
-                                    alert("Email Send Successfully !")
-                                })
-                                .catch("Error !");
-                        }
-            </script>
-        </div>
+  <script>
+    // Google Maps Init
+    let map, marker;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 28.6139, lng: 77.2090 }, // Default: New Delhi
+        zoom: 12,
+      });
+      marker = new google.maps.Marker({
+        position: map.getCenter(),
+        map: map,
+        draggable: true,
+      });
 
-    </section>
-    <!-- contacts section ends -->
-    <a href="#home">
-        <img class="top" src="https://cdn3.iconfinder.com/data/icons/common-4/24/ui-22-1024.png" alt="" style="display: none;">
-    </a>
+      google.maps.event.addListener(marker, 'dragend', function(evt){
+        document.getElementById("latitude").value = evt.latLng.lat();
+        document.getElementById("longitude").value = evt.latLng.lng();
+      });
+    }
 
-    <div class="credits">Copyright<span> Dr. Yogesh Deshmukh</span> | all rights reserved |2025. </div>
+    // Form Submit
+    document.getElementById("issueForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("image", document.getElementById("image").files[0]);
+      formData.append("description", document.getElementById("description").value);
+      formData.append("latitude", document.getElementById("latitude").value);
+      formData.append("longitude", document.getElementById("longitude").value);
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      try {
+        const response = await fetch("https://your-n8n-webhook-url", {
+          method: "POST",
+          body: formData
+        });
+        const result = await response.json();
+        document.getElementById("apiResponse").innerText = JSON.stringify(result, null, 2);
+      } catch (error) {
+        document.getElementById("apiResponse").innerText = "Error: " + error.message;
+      }
+    });
+  </script>
 
-    <script src="script.js"></script><style type="text/css" data-typed-js-css="true">
-        .typed-cursor{
-          opacity: 1;
-        }
-        .typed-cursor.typed-cursor--blink{
-          animation: typedjsBlink 0.7s infinite;
-          -webkit-animation: typedjsBlink 0.7s infinite;
-                  animation: typedjsBlink 0.7s infinite;
-        }
-        @keyframes typedjsBlink{
-          50% { opacity: 0.0; }
-        }
-        @-webkit-keyframes typedjsBlink{
-          0% { opacity: 1; }
-          50% { opacity: 0.0; }
-          100% { opacity: 1; }
-        }
-      </style>
-
-
-
-
-<span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
